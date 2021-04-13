@@ -1,12 +1,12 @@
 ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
+body {font-family: serif;}
 
 /* Month header */
 .month {
   padding: 70px 25px;
   width: auto;
   margin:auto;
-  background: seagreen;
+  background: mediumseagreen;
   text-align: center;
 }
 
@@ -69,6 +69,25 @@ body {font-family: Verdana, sans-serif;}
 /* Highlight the "current" day */
 .days li .active {
   padding: 5px;
-  background: seagreen;
+  background: mediumseagreen;
   color: white;
+}
+
+.button {
+  text-decoration:none;
+  background-color:mediumseagreen;
+  color:white;
+  padding:10px 15px;
+  border:none;
+  text-align:center;
+  float:right;
+}
+
+.button:hover{
+  background:#bbb;
+  color:white;
+}
+
+.container{
+  font-family: serif;
 }

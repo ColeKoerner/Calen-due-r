@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Student Calen-due-r</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
   <div class="month">
@@ -14,7 +14,7 @@
   </div>
 
   <ul class="weekdays">
-    <li id="Monday">Monday</li>
+    <li>Monday</li>
     <li>Tuesday</li>
     <li>Wednesday</li>
     <li>Thursday</li>
@@ -57,18 +57,24 @@
     <li>31</li>
     
   </ul>
+<div class="container">
+  <div>
+    <a class="button" href="https://blackboard.wichita.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_72_1#">Blackboard</a>
+  </div>
+  <div>
+    <a class="button" href="">myResources</a>
+  </div>
+  <div>
+    <a class="button" href="">myExams</a>
+  </div>
+  <div>
+    <a class="button" href="">myAssignments</a>
+  </div>
+  <div>
+    <a class="button" href="todolist.html">myToDoList</a>
+  </div>
+</div>
 
-  <button class='btn btn-primary' onclick="javascript:buttonpress()">Like</button>
 </body>
-
-<script type="text/javascript" language="javascript">
-
-function buttonpress(){
-  const monday = document.querySelector('#Monday');
-  monday.innerHTML = "Friday";
-}
-
-</script>
-
 </html>
 
