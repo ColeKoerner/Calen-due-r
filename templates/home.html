@@ -1,27 +1,168 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hello</h1>
-    </body>
+<html lang="en">
+<head class="site-header">
 
-    <style>
-        .column {
-            float: left;
-            width: 50%;
-            padding: 25px;
-        }
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css"> 
 
-        body {
-            font-family: monospace;
-            background: black;
-            color: grey;
+    <!-- JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+    
+    <!-- Load Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--load favicon-->
+    <title>Calen-due-r</title>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" >
+                Calen-due-r
+            </a>
+            <div class="SearchBar"><input class="form-control" id="myInput" type="search" placeholder="Search.."></div>
+            </div>
+      </nav>
+</head> 
+
+<body>
+
+    <div class="container-fluid content-section">
+
+    <!-- Buttons to choose list or grid view -->
+    <button type="button" class="btn btn-outline-warning" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+    <button type="button" class="btn btn-outline-warning" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+
+    <!--View all Apps by site-->
+    <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> Site viewer</a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" target="_blank" onclick="window.location.href='/todolist'">Todo List</a>
+        <a class="dropdown-item" target="_blank" onclick="window.location.href='/calendar'">Calendar</a>
+    </div>
+
+    <br></br>
+    
+
+    <!--Two applications per row for readability-->
+    <!--STYLE - style="background-color:#bbb;"-->
+    <!--row 1-->
+    <div class="row">
+
+        <div class="column">
+            <h2>Calendar</h2>
+            <p>
+                Calendar for all of your events.
+            </p>
+            <br>
+            <button type="button" class="btn btn-primary" target="_blank" onclick="window.location.href='/calendar'"><i class="fa fa-location-arrow"></i> Open</button>
+            <i class="fa fa-check-circle fa-lg" style="color: limegreen;"> Status</i>
+        </div>
+
+        <div class="column">
+            <h2>Prioritization</h2>
+            <p>
+                To do list for listing out all of your tasks. 
+            </p>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/todolist'"><i class="fa fa-location-arrow"></i> Open</button> 
+            <i class="fa fa-check-circle fa-lg" style="color: limegreen;"> Status</i>
+        </div>
+
+      </div>    
+
+</div>
+
+</body>
+
+<script type = "text/javascript">
+
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#appList div").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        });
+    });
+
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
+
+    // Declare a loop variable
+    var i;
+
+    // List View
+    function listView() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.width = "100%";
         }
-        
-    </style>
+    }
+
+    // Grid View
+    function gridView() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.width = "50%";
+        }
+    }
+
+</script>
+
+<style>
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding:25px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    body {
+        font-family: monospace;
+        background: black;
+        color: grey;
+        /* margin-top: -1rem; */
+    }
+
+    .navbar-text {
+        font-style: bold;
+        font-size: 22px;
+    }
+
+    .column {
+        border: 1px solid;
+        border-radius: 10px;
+    }
+    
+    .content-section {
+        background: black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        /* border: 3px solid;
+        border-radius: 15px;
+        border-color: grey; */
+    }
+    
+    .SearchBar {
+        width: 800px;
+        padding-right: 10px;
+    }
+    
+</style>
+
 </html>
