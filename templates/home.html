@@ -43,11 +43,11 @@
     <button type="button" class="btn btn-outline-warning" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
 
     <!--View all Apps by site-->
-    <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> Site viewer</a>
+    <!-- <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> Site viewer</a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" target="_blank" onclick="window.location.href='/todolist'">Todo List</a>
         <a class="dropdown-item" target="_blank" onclick="window.location.href='/calendar'">Calendar</a>
-    </div>
+    </div> -->
 
     <br></br>
     
@@ -64,7 +64,6 @@
             </p>
             <br>
             <button type="button" class="btn btn-primary" target="_blank" onclick="window.location.href='/calendar'"><i class="fa fa-location-arrow"></i> Open</button>
-            <i class="fa fa-check-circle fa-lg" style="color: limegreen;"> Status</i>
         </div>
 
         <div class="column">
@@ -74,7 +73,6 @@
             </p>
             <br>
             <button type="button" class="btn btn-primary" onclick="window.location.href='/todolist'"><i class="fa fa-location-arrow"></i> Open</button> 
-            <i class="fa fa-check-circle fa-lg" style="color: limegreen;"> Status</i>
         </div>
 
       </div>    
@@ -121,8 +119,8 @@
     /* Create two equal columns that floats next to each other */
     .column {
         float: left;
-        width: 50%;
-        padding:25px;
+        width: 30%;
+        padding: 25px;
     }
 
     /* Clear floats after the columns */
@@ -134,8 +132,8 @@
     
     body {
         font-family: monospace;
-        background: black;
-        color: grey;
+        background: darkgrey;
+        color: black;
         /* margin-top: -1rem; */
     }
 
@@ -150,7 +148,7 @@
     }
     
     .content-section {
-        background: black;
+        background: darkgrey;
         padding-top: 10px;
         padding-bottom: 10px;
         /* border: 3px solid;
